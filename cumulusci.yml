@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.78.0'
+project:
+    name: CAMG-Partner-Experience
+    package:
+        name: CAMG-Partner-Experience
+        api_version: '61.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/CAMG-Partner-Experience/tests
+            options:
+                outputdir: robot/CAMG-Partner-Experience/results
+
+    robot_testdoc:
+        options:
+            path: robot/CAMG-Partner-Experience/tests
+            output: robot/CAMG-Partner-Experience/doc/CAMG-Partner-Experience_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
